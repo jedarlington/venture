@@ -19,3 +19,9 @@
     font-style: normal;
 }
 
+/* Carousel */
+.carousel__slide {
+    flex: 0 0 237px;
+    margin-right: 2rem;
+}
+
