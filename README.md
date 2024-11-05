@@ -1,2 +1,2 @@
-# venture
-Venture dev task.
+npm install
+npm start
