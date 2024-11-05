@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Jakarta sans font */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.plus-jakarta-sans-bold {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.plus-jakarta-sans-medium {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Carousel */
+.wrapper .carousel {
+  width: calc(100% + (100vw - 100%) / 2);
+  max-width: revert;
+  grid-auto-columns: calc((100% / 5) - 12px);
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 3) - 9px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 6px);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper .carousel {
+    grid-auto-columns: 80%;
+  }
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.card .wrapper__image {
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+
+    .icon__arrow {
+      display: flex;
+    }
+  }
+}
+
+.card .wrapper__icon {
+  height: 40px;
+  width: 40px;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+}
+
+.card:hover .wrapper__icon {
+  display: flex;
+}
